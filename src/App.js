@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { useState } from 'react';
+const App = () => {
   return (
     <div className="App">
-    
+     
      
     </div>
   );
