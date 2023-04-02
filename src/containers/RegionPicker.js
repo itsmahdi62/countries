@@ -3,7 +3,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import React from "react";
-import Countries from "./Countries";
 import Grid from "@mui/material/Grid"
 import { Typography } from "@mui/material";
 import AfricaImage from "../asset/africa-ge3907c48e_1920.jpg"
@@ -27,31 +26,31 @@ const RegionPicker = ({onRegionPickHandler}) => {
         }}>
         <Grid container spacing={1} columns={12}>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>  onRegionPickHandler('asia')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('asia')}>
               <img src={AsiaImage} alt="#" />
               <Typography variant="h4">Asia</Typography>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>  onRegionPickHandler('africa')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('africa')}>
               <img src={AfricaImage} alt="#" />
               <Typography variant="h4">Africa</Typography>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>  onRegionPickHandler('europe')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('europe')}>
               <img src={europe} alt="#" />
               <Typography variant="h4">Europe</Typography>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>  onRegionPickHandler('americas')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('americas')}>
               <img src={southAmerika} alt="#" />
               <Typography variant="h4">South America</Typography>
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>  onRegionPickHandler('americas')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('americas')}>
               <img src={northAmerika} alt="#" />
               <Typography variant="h4">North America</Typography>
             </div>

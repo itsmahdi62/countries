@@ -15,7 +15,7 @@ const  clearSelectedRegionHandler = () =>{
   return (
     <div className="App">
      <Navbar />
-     {selectedRegion ? <Countries clearSelectedRegionHandler={clearSelectedRegionHandler} selectedRegion={selectedRegion}/> 
+     {selectedRegion ? <Countries clearSelectedRegionHandler={clearSelectedRegionHandler} onRegionPickHandler={selectedRegion}/> 
      : <RegionPicker  onRegionPickHandler={onRegionPickHandler}/>}
     </div>
   );

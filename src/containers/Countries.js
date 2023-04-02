@@ -1,6 +1,7 @@
 import "../App.css"
 import { useState , useEffect } from "react";
 import axios from "axios";
+import Modal from "../components/Modal/Modal";
 const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
     const [data,setData] = useState([]);
     const [loading,setLoading] = useState(false);
@@ -11,13 +12,14 @@ const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
             method:"GET",
             url: `https://restcountries.com/v3.1/region/${selectedRegion}`
         }).then(response =>{
+            console.log(response.data)
             setData(response.data)
-            console.log(response)
         }).catch(e=>console.log(e))
         .finally(() =>setLoading(false))
     },[selectedRegion])
     
     return ( <div>
+       
     </div>
     );
 }
