@@ -6,7 +6,7 @@ import Countries from './containers/Countries';
 const App = () => {
   const [selectedRegion , setSelectedRegion]= useState(null)
   const onRegionPickHandler = (region) =>{
-    selectedRegion(region)
+    setSelectedRegion(region)
   }
 const  clearSelectedRegionHandler = () =>{
   setSelectedRegion(null)
@@ -15,7 +15,7 @@ const  clearSelectedRegionHandler = () =>{
   return (
     <div className="App">
      <Navbar />
-     {selectedRegion ? <Countries clearSelectedRegionHandler={clearSelectedRegionHandler} onRegionPickHandler={selectedRegion}/> 
+     {selectedRegion ? <Countries clearSelectedRegionHandler={clearSelectedRegionHandler} selectedRegion={selectedRegion}/> 
      : <RegionPicker  onRegionPickHandler={onRegionPickHandler}/>}
     </div>
   );
