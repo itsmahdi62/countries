@@ -31,35 +31,38 @@ const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
     
     return ( <div>
        {/* <Modal loading={loading}/> */}
-       {loading ? <div className="progress">
-       <LinearProgress color="primary" />
-       </div> : <Grid container spacing={3} columns={12} sx={{margin:"20px 0"}}>
-                    <Grid item xs={12} sm={12} md={12} lg={12}>
-                        <Button color="primary" variant="contained" onClick={clearSelectedRegionHandler}>
-                            Pick another region
-                        </Button>
-                        {data.map((country) =>{
-                            <Grid item xs={12} sm={12} md={6} lg={6} key={country.name.common}>
-                            <Card sx={{ maxWidth: 500 }}>
-                                <CardMedia
-                                component="img"
-                                    image={country.flags.png}
-                                    alt="green iguana"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                    {country.name.common}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                    {`Population: ${country.population}`}
-                                    </Typography>
-                                </CardContent>
-                               
-                                </Card>
+        <Container>
+            {loading ? <div className="progress">
+            <LinearProgress color="primary" />
+            </div> : <Grid container spacing={3} columns={12} sx={{margin:"20px 0"}}>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
+                                <Button color="primary" variant="contained" onClick={clearSelectedRegionHandler}>
+                                    Pick another region
+                                </Button>
+                                {data.map((country) =>{
+                                   return (
+                                    <Grid item xs={12} sm={12} md={6} lg={6} key={country.name.common}>
+                                    <Card sx={{ maxWidth: 500 }}>
+                                        <CardMedia
+                                        component="img"
+                                            image={country.flags.png}
+                                            alt="green iguana"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                            {country.name.common}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                            {`Population: ${country.population}`}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                     </Grid>
+                         )
+                    })}
                 </Grid>
-            })}
-        </Grid>
-       </Grid>}
+            </Grid>}
+        </Container>
     </div>
     );
 }
