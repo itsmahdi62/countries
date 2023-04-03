@@ -14,10 +14,7 @@ import Typography from '@mui/material/Typography';
 const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
     
     const [data,setData] = useState([]);
-    const [loading,setLoading] = useState(false);
-
-    console.log(selectedRegion)
-    
+    const [loading,setLoading] = useState(false);    
     useEffect( ()=>{
         setLoading(true);
         axios({
@@ -25,6 +22,7 @@ const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
             url: `https://restcountries.com/v3.1/region/${selectedRegion}`
         }).then(response =>{
             setData(response.data)
+            console.log(response.data)
         }).catch(e=>console.log(e))
          .finally(() =>setLoading(false))
     },[selectedRegion])
@@ -41,6 +39,7 @@ const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
                                 </Button>
                                 {data.map((country) =>{
                                    return (
+                                    <div className="design">
                                     <Grid item xs={12} sm={12} md={6} lg={6} key={country.name.common}>
                                     <Card sx={{ maxWidth: 500 }}>
                                         <CardMedia
@@ -58,6 +57,7 @@ const Countries = ({clearSelectedRegionHandler,selectedRegion}) => {
                                         </CardContent>
                                     </Card>
                                      </Grid>
+                            </div>
                          )
                     })}
                 </Grid>

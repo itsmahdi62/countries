@@ -17,12 +17,12 @@ const RegionPicker = ({onRegionPickHandler}) => {
       <CssBaseline />
       <Container fixed>
         <Box sx={{ bgcolor: '#ffffff',
-            height: '90vh',
+            minHeight: '90vh',
             display:"flex" ,
             alignItems:"center",
             justifyContent:"center",
             width:"100%",
-            margin:"300px 0 10px 0",
+            margin:"10px 0 10px 0",
         }}>
         <Grid container spacing={1} columns={12}>
           <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -44,13 +44,7 @@ const RegionPicker = ({onRegionPickHandler}) => {
             </div>
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>onRegionPickHandler('americas')}>
-              <img src={southAmerika} alt="#" />
-              <Typography variant="h4">South America</Typography>
-            </div>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={6}>
-            <div className="region-container" onClick={()=>onRegionPickHandler('americas')}>
+            <div className="region-container" onClick={()=>onRegionPickHandler('america')}>
               <img src={northAmerika} alt="#" />
               <Typography variant="h4">North America</Typography>
             </div>
